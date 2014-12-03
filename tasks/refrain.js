@@ -6,7 +6,9 @@ module.exports = function (grunt) {
     var refrain = require('refrain')(this.options());
     this.files.forEach(function (filePair) {
       filePair.src.forEach(function (src) {
-        grunt.file.write(filePair.dest, refrain.render(path.relative(refrain.options.srcDir, src)));
+        refrain.render(path.relative(refrain.options.srcDir, src), null, function (err, output) {
+          grunt.file.write(filePair.dest, output);
+        });
       });
     });
   });

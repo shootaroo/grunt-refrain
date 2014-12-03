@@ -21,6 +21,6 @@
     "url": "git://github.com/shootaroo/grunt-refrain.git"
   },
   "dependencies": {
-    "refrain": "^0.0.1"
+    "refrain": "^0.0.3"
   }
 }
