@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "async": "^0.9.0",
-    "refrain": "^0.0.3"
+    "refrain": "^0.0.6"
   }
 }
