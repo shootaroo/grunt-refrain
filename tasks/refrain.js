@@ -13,7 +13,7 @@ module.exports = function (grunt) {
       async.eachSeries(filePair.src, function (src, next) {
         refrain.render(path.relative(refrain.options.srcDir, src), null, function (err, output) {
           grunt.file.write(filePair.dest, output);
-          next();
+          setImmediate(next);
         });
       }, next);
     }, done);
