@@ -12,6 +12,10 @@ module.exports = function (grunt) {
     async.eachSeries(this.files, function (filePair, next) {
       async.eachSeries(filePair.src, function (src, next) {
         refrain.render(path.relative(refrain.options.srcDir, src), null, function (err, output) {
+          if (err) {
+            grunt.warn(err);
+            return next(err);
+          }
           grunt.file.write(filePair.dest, output);
           setImmediate(next);
         });
